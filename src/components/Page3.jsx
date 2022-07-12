@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import SwiperCore, { Navigation } from "swiper";
+import Project from "./Project";
+import { useState } from "react";
 
 SwiperCore.use([Navigation]);
 
-export default function Page3({ page }) {
+export default function Page3() {
     const option = {
         slidesPerView: 3,
         spaceBetween: 0,
@@ -14,16 +16,24 @@ export default function Page3({ page }) {
         loop: true,
         centeredSlides: true,
         speed: 700
+    };
+    const [visibility, setVisibility] = useState("hidden");
+    const [id, setId] = useState(0);
+    const openHandler = (id) => {
+        setVisibility("visible");
+        setId(id);
     }
+    
     return (<Page>
         <Title>Projects.
             <p>단순한 클론코딩보다는 실제로 필요로 했던 제품을 만들어보려 노력했습니다.</p>
         </Title>
         <Projects {...option}>
-            <SwiperSlide><img src="https://user-images.githubusercontent.com/104556563/178422812-4e0161cc-fec2-49e3-80da-b53655d0cda6.png" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="https://user-images.githubusercontent.com/104556563/178422794-8f9b98e8-e33c-4340-aae6-a5d5d13cc36f.png" alt="" /></SwiperSlide>
-            <SwiperSlide><img src="https://user-images.githubusercontent.com/104556563/178422821-68e3004f-4f9e-444e-8ada-5dc9f1ee9553.png" alt="" /></SwiperSlide>
+            <SwiperSlide onClick={() => { openHandler(0) }}><img src="https://user-images.githubusercontent.com/104556563/178422812-4e0161cc-fec2-49e3-80da-b53655d0cda6.png" alt="" /></SwiperSlide>
+            <SwiperSlide onClick={() => { openHandler(1) }}><img src="https://user-images.githubusercontent.com/104556563/178422794-8f9b98e8-e33c-4340-aae6-a5d5d13cc36f.png" alt="" /></SwiperSlide>
+            <SwiperSlide onClick={() => { openHandler(2) }}><img src="https://user-images.githubusercontent.com/104556563/178422821-68e3004f-4f9e-444e-8ada-5dc9f1ee9553.png" alt="" /></SwiperSlide>
         </Projects>
+        <Project id={id} visibility={visibility} setVisibility={setVisibility}></Project>
     </Page>)
 }
 
@@ -59,6 +69,7 @@ const Projects = styled(Swiper)`
         height: 100%;
         background-color: orange;
         transition-duration: 0.7s;
+        cursor: pointer;
         img {
             width: 100%;
             height: 100%;
@@ -73,5 +84,6 @@ const Projects = styled(Swiper)`
     }
     .swiper-button-next:after, .swiper-button-prev:after {
         color: #e98203;
+        z-index: 10;
     }
 `

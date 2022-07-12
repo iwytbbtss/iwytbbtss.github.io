@@ -30,15 +30,23 @@ export default function Page1({ page }) {
         </Profile>
         <Stack opacity={opacity}>
             <h3>📖보유기술(관심분야)</h3>
-            <h4>-FrontEnd</h4>
-            <div>React, Vue.js, TypeScript, JavaScript(ES6), HTML5, CSS3</div>
-            <div>(SSR, React Native, SCSS)</div>
-            <h4>-BackEnd</h4>
-            <div>Node.js, Express</div>
-            <div>(Web crawling, REST API, Graph QL, Python)</div>
-            <h4>-etc</h4>
-            <div>Git, Github, Firebase, Webpack, C</div>
-            <div>(함수형 프로그래밍, 클린코드, 애자일 방법론)</div>
+            <Box>
+                <div>
+                    <h4>-FrontEnd</h4>
+                    <p>React, Vue.js, TypeScript, JavaScript(ES6), HTML5, CSS3</p>
+                    <p>(SSR, React Native, SCSS)</p>
+                </div>
+                <div>
+                    <h4>-BackEnd</h4>
+                    <p>Node.js, Express</p>
+                    <p>(Web crawling, REST API, Graph QL, Python)</p>
+                </div>
+                <div>
+                    <h4>-etc</h4>
+                    <p>Git, Github, Firebase, Webpack, C</p>
+                    <p>(함수형 프로그래밍, 클린코드, 애자일 방법론)</p>
+                </div>
+            </Box>
         </Stack>
     </Page>)
 }
@@ -129,7 +137,7 @@ const Link = styled.a`
 `;
 
 const Stack = styled.div`
-    width: 650px;
+    width: 600px;
     height: auto;
     margin: auto;
     background-color: #e0e0e0;
@@ -141,14 +149,19 @@ const Stack = styled.div`
         color: #e98203;
         font-weight: 700;
     }
-    h4 {
-        text-align: left;
-        color: black;
+    @media screen and (max-height: 800px) {
+        width: max-content;
     }
+`;
+
+const Box = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     div {
-        margin-left: 20px;
-        text-align: left;
-        line-height: 25px;
-        color: black;
+        width: 400px;
+        height: 130px;
     }
 `

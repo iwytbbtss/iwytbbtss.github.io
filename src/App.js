@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { debounce } from "lodash";
-import { Page1, Page2, Page3, Page4 } from "./components";
+import { Page1, Page2, Page3, Page4, Pagination } from "./components";
 
 function App() {
   const app = useRef();
@@ -9,36 +9,36 @@ function App() {
   const [transY, setTransY] = useState(0);
   const [innerHeight, setInnerHeight] = useState(0);
   const DIVIDER = 3;
+  const wheelHandler = debounce((e) => {
+    e.preventDefault();
+    const { deltaY } = e;
+    if (deltaY > 0) {
+      setPage((page) => {
+        if (page < 3) {
+          return page + 1;
+        }
+        else {
+          return page;
+        }
+      });
+    }
+    else if(deltaY < 0) {
+      setPage((page) => {
+        if (page > 0) {
+          return page - 1;
+        }
+        else {
+          return page;
+        }
+      });
+    }
+  }, 75);
+  const preventWheel = (e) => {
+    e.preventDefault();
+  }
 
   useEffect(() => {
     if (app) {
-      const wheelHandler = debounce((e) => {
-        e.preventDefault();
-        const { deltaY } = e;
-        if (deltaY > 0) {
-          setPage((page) => {
-            if (page < 3) {
-              return page + 1;
-            }
-            else {
-              return page;
-            }
-          });
-        }
-        else if(deltaY < 0) {
-          setPage((page) => {
-            if (page > 0) {
-              return page - 1;
-            }
-            else {
-              return page;
-            }
-          });
-        }
-      }, 75);
-      const preventWheel = (e) => {
-        e.preventDefault();
-      }
       app.current.addEventListener("wheel", wheelHandler);
       app.current.addEventListener("wheel", preventWheel);
     }
@@ -58,15 +58,18 @@ function App() {
   }, [page, innerHeight]);
 
   return (
-    <Outer transY={transY} ref={app}>
-      <Page1 page={page}></Page1>
-      <Divider height={DIVIDER} />
-      <Page2 page={page}></Page2>
-      <Divider height={DIVIDER} />
-      <Page3 page={page}></Page3>
-      <Divider height={DIVIDER} />
-      <Page4 page={page}></Page4>
-    </Outer>
+    <>
+      <Outer transY={transY} ref={app}>
+        <Page1 page={page}></Page1>
+        <Divider height={DIVIDER} />
+        <Page2 page={page}></Page2>
+        <Divider height={DIVIDER} />
+        <Page3></Page3>
+        <Divider height={DIVIDER} />
+        <Page4 page={page}></Page4>
+      </Outer>
+      <Pagination page={page} setPage={setPage}></Pagination>
+    </>
   );
 }
 
