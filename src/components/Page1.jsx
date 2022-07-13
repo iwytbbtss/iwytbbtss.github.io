@@ -93,7 +93,8 @@ const Profile = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     opacity: ${props => props.opacity};
-    transition-duration: 1s;
+    transition: all 1s ease;
+    transition-delay: 0.5s;
 `;
 
 const Contact = styled.div`
@@ -144,7 +145,8 @@ const Stack = styled.div`
     margin-top: 30px;
     padding: 10px 20px 20px 20px;
     opacity: ${props => props.opacity};
-    transition-duration: 1s;
+    transition: all 1s ease;
+    transition-delay: 0.8s;
     h3 {
         color: #e98203;
         font-weight: 700;
