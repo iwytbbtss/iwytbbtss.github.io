@@ -34,7 +34,7 @@ export default function Page1({ page }) {
                 <div>
                     <h4>-FrontEnd</h4>
                     <p>React, Vue.js, TypeScript, JavaScript(ES6), HTML5, CSS3</p>
-                    <p>(SSR, React Native, SCSS)</p>
+                    <p>(SSR, SEO, React Native, SCSS)</p>
                 </div>
                 <div>
                     <h4>-BackEnd</h4>
