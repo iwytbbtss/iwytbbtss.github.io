@@ -46,7 +46,7 @@ const LineBox = styled.div`
         color: #e98203;
     }
     p {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
     }
 `
@@ -60,7 +60,8 @@ const LeftLine = styled.div`
     opacity: ${props => props.opacity};
     transform: translateX(-${props => props.transX}px);
     transition-duration: 1s;
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
 `;
 
 const RightLine = styled.div`
@@ -72,5 +73,6 @@ const RightLine = styled.div`
     opacity: ${props => props.opacity};
     transform: translateX(${props => props.transX}px);
     transition-duration: 1s;
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
 `;

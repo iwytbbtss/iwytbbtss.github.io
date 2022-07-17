@@ -6,7 +6,7 @@ export default function Footer({ page }) {
 
     useEffect(() => {
         if (page === 4) {
-            setHeight(200);
+            setHeight(180);
         }
         else {
             setHeight(0);
@@ -25,4 +25,9 @@ const Box = styled.div`
     width: 100%;
     height: ${props => props.height}px;
     transition-duration: 0.8s;
+    font-weight: 500;
+    backdrop-filter: brightness(1.5);
+    &>p:first-of-type {
+        padding-top: 10px;
+    }
 `

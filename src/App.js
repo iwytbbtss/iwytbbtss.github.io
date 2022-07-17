@@ -2,14 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { debounce } from "lodash";
 import { Page1, Page2, Page3, Page4, Pagination, Footer, Github } from "./components";
+import * as THREE from 'three';
+import RINGS from "vanta/dist/vanta.rings.min";
 
 function App() {
+  const background=useRef();
   const app = useRef();
+  const [vantaEffect, setVantaEffect] = useState(0);
   const [page, setPage] = useState(0);
   const [transY, setTransY] = useState(0);
   const [innerHeight, setInnerHeight] = useState(0);
   const [visibility, setVisibility] = useState("hidden");
   const DIVIDER = 3;
+  // 페이지 넘김
   const wheelHandler = debounce((e) => {
     e.preventDefault();
     const { deltaY } = e;
@@ -34,10 +39,23 @@ function App() {
       });
     }
   }, 75);
+  // 기본이벤트 방지
   const preventWheel = (e) => {
     e.preventDefault();
-  }
-
+  };
+  // 백그라운드 애니메이션
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(RINGS({
+        el: background.current,
+        THREE: THREE
+      }))
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect]);
+  // 페이지넘기기
   useEffect(() => {
     const current=app.current
     if (app) {
@@ -63,7 +81,7 @@ function App() {
 
   useEffect(() => {
     if (page === 4) {
-      setTransY(3 * innerHeight + 200);
+      setTransY(3 * innerHeight + 180);
     }
     else {
       setTransY(page * innerHeight);
@@ -73,6 +91,7 @@ function App() {
 
   return (
     <>
+      <Background ref={background}></Background>
       <Outer transY={transY} ref={app}>
         <Page1 page={page}></Page1>
         <Divider height={DIVIDER} />
@@ -83,11 +102,19 @@ function App() {
         <Page4 page={page}></Page4>
         <Footer page={page}></Footer>
       </Outer>
-      <Pagination page={page} setPage={setPage}></Pagination>
+      <Pagination page={page} setPage={setPage} visibility={visibility}></Pagination>
       {visibility==="hidden" && <Github link={"https://github.com/iwytbbtss/iwytbbtss.github.io"}></Github>}
     </>
   );
 }
+
+const Background = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+`;
 
 const Outer = styled.div`
   width: 100vw;
@@ -97,11 +124,11 @@ const Outer = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-`
+`;
 
 const Divider = styled.div`
   width: 100%;
   height: ${props => props.height}px;
-`
+`;
 
 export default App;

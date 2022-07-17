@@ -21,7 +21,7 @@ export default function Page1({ page }) {
         </Title>
 
         <Profile opacity={opacity}>
-            <img src="https://avatars.githubusercontent.com/u/104556563?v=4" alt="" width={160} height={160} />
+            <img src="https://user-images.githubusercontent.com/104556563/179393073-aa6bfbb2-1abb-455a-b588-f2f2b62cf035.jpg" alt="" width={160} height={160} />
             <Contact>Contact.
                 <div>Email - <strong>iwytbbtss00@naver.com</strong></div>
                 <div>Phone - <strong>010-9139-9780<Blur>👆</Blur></strong></div>
@@ -65,8 +65,8 @@ const Title = styled.div`
 `;
 
 const Typing = styled.div`
-    width: 52ch;
-    animation: typing 2s steps(52), blink .5s step-end infinite alternate;
+    width: 44ch;
+    animation: typing 2s steps(44), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2.5px solid;
@@ -87,7 +87,8 @@ const Profile = styled.div`
     width: max-content;
     height: max-content;
     padding: 15px;
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
     margin: 40px auto;
     display: flex;
     flex-wrap: wrap;
@@ -141,7 +142,8 @@ const Stack = styled.div`
     width: 600px;
     height: auto;
     margin: auto;
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
     margin-top: 30px;
     padding: 10px 20px 20px 20px;
     opacity: ${props => props.opacity};

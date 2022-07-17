@@ -3,26 +3,19 @@
         "id": 0,
         "title": "Feelm",
         "url": "https://feelm-9bc54.web.app/",
+        "github": "https://github.com/TeamFeelm/Feelm",
         "detail": [
             {
                 "img": "https://user-images.githubusercontent.com/104556563/178696575-6732a97e-25aa-4a3c-88f4-72be3be4e8c3.png",
                 "text": "'오늘은 누워서 넷플릭스나 봐야지' 하면서 넷플릭스를 들어갔지만 뭘 봐야할지 고민하는데만 30분씩 쓰는 모습을 보며 저희가 보고 재밌었던 영화를 추천해 줄 수 있는 서비스를 만들면 좋겠다고 생각했습니다. '하지만 사람마다 다 취향이 다른데?' 그럼 성향에 따라 맞춤형으로 추천해주자! 라는 아이디어에서 출발하였습니다. 메인은 jQuery의 플러그인인 fullPage.js의 형식으로 React Hook API와 Redux Toolkit을 사용하여 직접 만들어 보았습니다."
             },
             {
-                "img": "https://user-images.githubusercontent.com/104556563/178696586-21412843-2229-43c7-b3e6-adfe6ffcc90d.png",
-                "text": "테스트 페이지는 SNS에서 한번쯤 해봤을 법한 심리 테스트와 비슷하게 만들어 거부감을 줄이고 중간중간 집중력을 환기 시킬 수 있는 가벼운 질문들을 배치해 두었습니다. 결과 페이지에서는 "
+                "img": "https://user-images.githubusercontent.com/104556563/179403968-c485c966-6285-401a-8a65-a3de3076b2b4.png",
+                "text": "테스트 페이지는 SNS에서 한번쯤 해봤을 법한 심리 테스트와 비슷하게 만들어 거부감을 줄이고 상단의 프로그래스 바를 통해 진행도를 한눈에 볼 수 있게 만들었습니다. 결과 페이지에서는 앞에서 선택한 선택지를 바탕으로 자신과 닮은 영화 속 주인공과 특징을 설명해드립니다. 하단에는 공유하기, 다시하기, 추천영화 버튼을 배치해 결과를 친구들과 공유하고 자연스럽게 영화 추천으로 넘어갈 수 있도록 해두었습니다."
             },
             {
-                "img": "https://user-images.githubusercontent.com/104556563/178696601-837fae21-ff85-4a15-bea4-cf5640cb71fd.png",
-                "text": "추가 중"
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178696629-63049b9e-4b87-498e-8f03-2a9325419710.png",
-                "text": ""
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178700002-7bc1c06c-4595-4fa0-a5ad-9d9c7371ee96.png",
-                "text": ""
+                "img": "https://user-images.githubusercontent.com/104556563/179404000-7d977f0d-aa11-4c90-bdb8-77c655f94eb4.png",
+                "text": "검색 페이지는 사용자의 검색어 입력을 통한 검색과 장르 태그를 선택해 검색할 수 있는 두 가지를 만들었습니다. 장르 태그는 사용자 경험을 생각해 단일 선택만 가능한 것에서 중복 선택이 가능하고 한번 더 눌러 선택 해제할 수 있는 것으로 변경하였습니다. 디테일 페이지는 네이버 영화 페이지를 크롤링해 가져온 정보를 재구성했으며 Promise의 then을 사용해 크롤링이 완료되면 출력될 수 있도록 하였습니다."
             }
         ]
     },
@@ -30,34 +23,23 @@
         "id": 1,
         "title": "Mat.Zip",
         "url": "https://mat-zip-a7f69.web.app/",
+        "github": "https://github.com/Mat-Zip/Mat.Zip",
         "detail": [
             {
                 "img": "https://user-images.githubusercontent.com/104556563/178696874-5ed863be-0c63-473f-a1b8-6c2273ddd89f.png",
-                "text": "추가 중"
+                "text": "저는 분위기 좋은 맛집, 카페를 많이 알고 있어 평소에 친구들이 저에게 데이트 코스를 많이 물어보는 데, 친구들이 매번 저에게 묻지 않아도 웹사이트에 접속해서 바로 볼 수 있으면 좋지 않을까? 라는 생각으로 시작한 프로젝트입니다. 진행하면서 지인이 아닌 일반 사용자들도 손쉽게 사용할 수 있게 만들고자 반응형과 UI/UX에 신경을 썼습니다. Vue.js와 vuex, vue router를 적극 활용하고 Firebase hosting과 GitHub actions를 사용해 CI/CD를 구축한 첫 프로젝트입니다."
             },
             {
-                "img": "https://user-images.githubusercontent.com/104556563/178696904-196b31e0-96b8-4fef-9254-91852787eb33.png",
-                "text": ""
+                "img": "https://user-images.githubusercontent.com/104556563/179404030-2d9d62b6-fdc7-4b0b-866d-0239d264bebf.png",
+                "text": "카드 형태로 나열된 장소를 클릭하면 모달창이 열리며 디테일, 지도, 일정관리를 할 수 있게 됩니다. 디테일 페이지는 친구들에게 이 곳을 소개한다는 느낌으로 사진들과 소개글을 적어두었습니다. 소개글 하단에는 사용자들이 댓글을 남길 수 있도록 하는 기능을 추가 중이며 디자인이 확정나는 대로 추가할 예정입니다. 지도 페이지는 클릭한 장소를 중심으로 지도를 보여주며 확대/축소/이동을 통해 주변의 다른 장소를 둘러볼 수도 있게 했으며 KakaoMaps SDK를 사용하여 구현했습니다."
             },
             {
-                "img": "https://user-images.githubusercontent.com/104556563/178697015-dca034eb-3002-4d04-a57b-0247be853edf.png",
-                "text": ""
+                "img": "https://user-images.githubusercontent.com/104556563/179404036-64cde026-c0d8-404f-9095-e294c43bdbd9.png",
+                "text": "사용자가 로그인이 필요한 기능(좋아요, 댓글, 일정관리)을 선택했을 시 알림창을 통해 회원가입/로그인 페이지로 안내합니다. Firebase에서 제공하는 Authentication 기능을 사용해 회원가입/이메일 로그인/구글 로그인을 지원합니다. 상단의 네비게이션 바는 모바일에선 햄버거 모양의 사이드 메뉴 바로 반응형으로 구현했습니다."
             },
             {
-                "img": "https://user-images.githubusercontent.com/104556563/178697053-8ece714b-fbfc-4d17-b049-29006a1088a8.png",
-                "text": ""
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178697089-b22565ca-ab8e-481c-a7a3-9acca6c2f0e2.png",
-                "text": ""
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178697104-b7d5aca3-8930-44e6-b23f-5668d45d4239.png",
-                "text": ""
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178700026-b02df5ad-97ce-4534-ae8a-65f205de21a0.png",
-                "text": ""
+                "img": "https://user-images.githubusercontent.com/104556563/179404040-76494f8d-4dec-4b07-b9ed-9fe4bb618056.png",
+                "text": "로그인된 유저의 정보는 Firebase Realtime Database에서 받아오며 마이페이지에선 좋아요를 누른 장소들을 최신 순서대로 모아볼 수 있습니다. 일정관리 페이지에선 일정을 추가하고 옆에 위치한 캘린더에서 바로 확인할 수도 있고 추가된 일정을 확인하러 갈 수도 있게 만들었습니다. 프로젝트에서 모달, 알림창 등 자주 사용되는 컴포넌트들을 재사용 가능하게 설계하고 vuex를 통해 전역 상태관리하는 데에 중점을 두었습니다."
             }
         ]
     },
@@ -65,18 +47,15 @@
         "id": 2,
         "title": "ㅂ",
         "url": "https://iwytbbtss.github.io/F1/",
+        "github": "https://github.com/Mat-Zip/Mat.Zip",
         "detail": [
             {
                 "img": "https://user-images.githubusercontent.com/104556563/178697417-539b380e-f475-4c35-b8e6-6bd2a7b8b057.png",
-                "text": "추가 중"
+                "text": "유튜브 JTBC Golf&Sprots 채널에서 올려주던 F1 리플레이를 보고 F1에 관심을 가지게되었습니다. 하지만 한국에서 정보를 얻기엔 정보가 너무 많이 흩어져 있고 오래된 정보가 많아, 입문하는데 어려움이 많았습니다. 기왕 관심을 가지게 된 분들이 흥미를 잃지 않기 위해, 그리고 제가 필요할 때 정보를 찾아보기 위해 프로젝트를 진행하였습니다. 'F1'을 180도 돌려서 'ㅂ'이라는 프로젝트명을 정했고 CSS를 활용해 일정시간마다 로고를 회전시켰습니다. 개발을 배우던 초창기에 만든 프로젝트라 추가하고 싶은 정보와 기능이 생길때마다 추가, 수정하고 있습니다."
             },
             {
                 "img": "https://user-images.githubusercontent.com/104556563/178697435-2a90edfc-c468-4b40-9421-114a00557633.png",
-                "text": ""
-            },
-            {
-                "img": "https://user-images.githubusercontent.com/104556563/178700049-3ebe2a3f-8176-4ecd-a73d-61f1353c888d.png",
-                "text": ""
+                "text": "현재 시즌의 드라이버와 컨스트럭터 순위를 rapid API를 통해 받아와 차트 형태로 보여줍니다. Vue.js의 장점인 slots를 사용하여 차트의 재사용성을 극대화 시켰습니다. 과거 시즌의 순위와 일정도 보여줄 수 있도록 UI를 구상 중입니다. 아래 추천 동영상은 제가 입문하는데 도움이 됐던 영상을 모아두었습니다. 자주 사용하는 carousel을 라이브러리를 사용하지 않고 웹표준/반응형을 대응할 수 있도록 만들어 보았습니다."
             }
         ]
     }

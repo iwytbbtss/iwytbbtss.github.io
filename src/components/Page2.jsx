@@ -76,7 +76,8 @@ const Box = styled.div`
     display: inline-block;
     width: 80%;
     margin: 20px auto;
-    background-color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
     padding: 5px 15px;
     grid-area: ${props => props.area};
     transform: translateX(${props => props.transX}px);

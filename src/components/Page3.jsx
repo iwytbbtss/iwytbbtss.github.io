@@ -63,9 +63,9 @@ const Title = styled.div`
     width: 100%;
     height: auto;
     p {
-        font-size: 16px;
-        color: black;
+        font-size: 18px;
         font-weight: 500;
+        color: white;
     }
 `
 
@@ -75,11 +75,10 @@ const Projects = styled(Swiper)`
     padding-bottom: 25vh;
     margin: 0 40px;
     opacity: ${props => props.opacity};
-    transition: all 2.3s ease;
+    transition: all 1.1s linear;
     .swiper-slide {
         width: 100%;
         height: 100%;
-        background-color: orange;
         transition-duration: 0.7s;
         cursor: pointer;
         img {
@@ -89,7 +88,6 @@ const Projects = styled(Swiper)`
         }
     }
     .swiper-slide-active {
-        background-color: lightblue;
         z-index: 1;
         transform: scale(1.2);
         transition-duration: 0.7s;

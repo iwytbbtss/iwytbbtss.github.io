@@ -1,12 +1,15 @@
 import styled from "styled-components"
 
-export default function Pagination({ page, setPage }) {
-    return (<Container page={page}>
+export default function Pagination({ page, setPage, visibility }) {
+
+    return (<>
+        {visibility==="hidden" && <Container page={page}>
         <li onClick={()=>{setPage(0)}}>&#9679;<div>Profile</div></li>
         <li onClick={()=>{setPage(1)}}>&#9679;<div>개선/문제해결 사례</div></li>
         <li onClick={()=>{setPage(2)}}>&#9679;<div>Projects</div></li>
         <li onClick={()=>{setPage(3)}}>&#9679;<div>Introduce</div></li>
-    </Container>)
+    </Container>}
+    </>)
 }
 
 const Container = styled.ul`
@@ -34,7 +37,7 @@ const Container = styled.ul`
         top: 40%;
         right: 20px;
         width: max-content;
-        color: black;
+        color: white;
         font-size: 12px;
         opacity: 0.4;
         transition-duration: 0.5s;
