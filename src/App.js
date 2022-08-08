@@ -92,7 +92,7 @@ function App() {
   return (
     <>
       <Background ref={background}></Background>
-      <Outer transY={transY} ref={app}>
+      <Outer transY={transY} ref={app} visibility={visibility}>
         <Page1 page={page}></Page1>
         <Divider height={DIVIDER} />
         <Page2 page={page}></Page2>
@@ -121,6 +121,7 @@ const Outer = styled.div`
   height: 100vh;
   transition: 0.8s all ease;
   transform: translateY(-${props => props.transY}px);
+  overflow-y: ${props => props.visibility === "hidden" ? "": "hidden"};
   ::-webkit-scrollbar {
     display: none;
   }

@@ -2,15 +2,17 @@ import styled from "styled-components";
 import { GrClose } from "react-icons/gr";
 import Github from "./Github";
 import projects from "../projects.json";
+import reactDom from "react-dom";
 
 export default function Project({ id, visibility, setVisibility }) {
+    const el = document.getElementById("project");
     const project = projects.find((item) => item.id === id);
     const closeHandler = (e) => {
         e.stopPropagation();
         setVisibility("hidden");
     }
 
-    return (<Route visibility={visibility} onClick={closeHandler}>
+    return reactDom.createPortal((<Route visibility={visibility} onClick={closeHandler}>
         <Content onClick={(e) => { e.stopPropagation(); }}>
             <GrClose className="close_btn" onClick={closeHandler}></GrClose>
             <Github link={project.github}></Github>
@@ -48,7 +50,7 @@ export default function Project({ id, visibility, setVisibility }) {
             </Detail>)}
 
         </Content>
-    </Route>)
+    </Route>), el)
 }
 
 const Route = styled.div`
